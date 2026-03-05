@@ -1,5 +1,9 @@
-from classes.hr.SalaryEmployee import SalaryEmployee
+from roles import SecretaryRole
+from classes.hr.Employee import Employee
+from classes.hr.policy.SalaryPolicy import SalaryPolicy
 
-class Secretary(SalaryEmployee):
-    def work(self, hours):
-        print(f"{self.name} expends {hours} hours doing office paperwork.")
+
+class Secretary(Employee, SecretaryRole, SalaryPolicy):
+    def __init__(self, id, name, weekly_salary):
+        SalaryPolicy.__init__(self, weekly_salary)
+        super().__init__(id, name)

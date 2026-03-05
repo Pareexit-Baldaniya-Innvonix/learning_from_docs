@@ -1,9 +1,8 @@
-from .Secretary import Secretary
-from classes.hr.HourlyEmployee import HourlyEmployee
+from roles import SecretaryRole
+from classes.hr.Employee import Employee
+from classes.hr.policy.HourlyPolicy import HourlyPolicy
 
-class TemporarySecretary(Secretary, HourlyEmployee):
+class TemporarySecretary(Employee, SecretaryRole, HourlyPolicy):
     def __init__(self, id, name, hours_worked, hourly_rate):
-        HourlyEmployee.__init__(self, id, name, hours_worked, hourly_rate)
-        
-    def calculate_payroll(self):
-        return HourlyEmployee.calculate_payroll(self)
+        HourlyPolicy.__init__(self, hours_worked, hourly_rate)
+        super().__init__(id, name)

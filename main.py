@@ -4,13 +4,13 @@ from classes.hr.CommissionEmployee import CommissionEmployee
 from classes.hr.PayrollSystem import PayrollSystem
 from classes.hr.DisgruntledEmployee import DisgruntledEmployee
 from classes.hr.Employee import Employee
+from classes.hr.ProductivitySystem import ProductivitySystem
 
 from classes.employee.FactoryWorker import FactoryWorker
 from classes.employee.Manager import Manager
 from classes.employee.SalesPerson import SalesPerson
 from classes.employee.Secretary import Secretary
 from classes.employee.TemporarySecretary import TemporarySecretary
-from classes.employee.ProductivitySystem import ProductivitySystem
 
 salary_employee = SalaryEmployee(1, "John Smith", 1500)
 hourly_employee = HourlyEmployee(2, "Jane Doe", 40, 15)

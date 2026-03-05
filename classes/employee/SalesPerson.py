@@ -1,5 +1,8 @@
-from classes.hr.CommissionEmployee import CommissionEmployee
+from roles import SalesRole
+from classes.hr.Employee import Employee
+from classes.hr.policy.CommissionPolicy import CommissionPolicy
 
-class SalesPerson(CommissionEmployee):
-    def work(self, hours):
-        print(f"{self.name} expends {hours} hours on the phone.")
+class SalesPerson(Employee, SalesRole, CommissionPolicy):
+    def __init__(self, id, name, weekly_salary, commission):
+        CommissionPolicy.__init__(self, weekly_salary, commission)
+        super().__init__(id, name)

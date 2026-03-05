@@ -1,5 +1,8 @@
-from classes.hr.HourlyEmployee import HourlyEmployee
+from .roles import FactoryRole
+from classes.hr.Employee import Employee
+from classes.hr.policy.HourlyPolicy import HourlyPolicy
 
-class FactoryWorker(HourlyEmployee):
-    def work(self, hours):
-        print(f"{self.name} manufactures gadgets for {hours} hours.")
+class FactoryWorker(Employee, FactoryRole, HourlyPolicy):
+    def __init__(self, id, name, hours_worked, hourly_rate):
+        HourlyPolicy.__init__(self, hours_worked, hourly_rate)
+        super().__init__(id, name)
