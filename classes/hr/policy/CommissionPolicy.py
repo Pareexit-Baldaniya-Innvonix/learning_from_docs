@@ -1,5 +1,6 @@
 from .SalaryPolicy import SalaryPolicy
 
+
 class CommissionPolicy(SalaryPolicy):
     def __init__(self, weekly_salary, commission_per_sale):
         super().__init__(weekly_salary)

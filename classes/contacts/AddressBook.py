@@ -1,6 +1,7 @@
 from classes.contacts.Address import Address
 
-class AddressBook:
+
+class _AddressBook:
     def __init__(self):
         self._employee_addresses = {
             1: Address("121 Admin Rd.", "Concord", "NH", "03301"),
@@ -10,8 +11,9 @@ class AddressBook:
             5: Address("99 Mountain Rd.", "Concord", "NH", "03301"),
         }
 
-    def get_employee_address(self, employee_id):
-        address = self._employee_addresses.get(employee_id)
-        if not address:
-            raise ValueError(employee_id)
-        return address
+
+_address_book = _AddressBook()
+
+
+def get_employee_address(employee_id):
+    return _address_book.get_employee_address(employee_id)

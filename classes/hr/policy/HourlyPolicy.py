@@ -1,5 +1,6 @@
 from classes.hr.policy.PayrollPolicy import PayrollPolicy
 
+
 class HourlyPolicy(PayrollPolicy):
     def __init__(self, hourly_rate):
         super().__init__()

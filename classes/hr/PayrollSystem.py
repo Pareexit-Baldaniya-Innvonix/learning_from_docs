@@ -3,7 +3,7 @@ from classes.hr.policy.CommissionPolicy import CommissionPolicy
 from classes.hr.policy.HourlyPolicy import HourlyPolicy
 
 
-class PayrollSystem:
+class _PayrollSystem:
     def __init__(self):
         self._employee_policies = {
             1: SalaryPolicy(3000),
@@ -13,19 +13,13 @@ class PayrollSystem:
             5: HourlyPolicy(9),
         }
 
-    def get_policy(self, employee_id):
-        policy = self._employee_policies.get(employee_id)
-        if not policy:
-            return ValueError(employee_id)
-        return policy
 
-    def calculate_payroll(self, employees):
-        print("Calculating Payroll")
-        print("===================")
-        for employee in employees:
-            print(f"Payroll for: {employee.id} - {employee.name}")
-            print(f"- Check amount: {employee.calculate_payroll()}")
-            if employee.address:
-                print("- Sent to:")
-                print(employee.address)
-            print("")
+_payroll_system = _PayrollSystem()
+
+
+def get_policy(employee_id):
+    return _payroll_system.get_policy(employee_id)
+
+
+def calculate_payroll(employees):
+    _payroll_system.calculate_payroll(employees)

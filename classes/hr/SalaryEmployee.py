@@ -1,5 +1,6 @@
 from .Employee import Employee
 
+
 class SalaryEmployee(Employee):
     def __init__(self, id, name, weekly_salary):
         super().__init__(id, name)
